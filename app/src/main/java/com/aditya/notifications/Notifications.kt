@@ -6,10 +6,11 @@ import android.app.NotificationManager
 import android.os.Build
 import androidx.core.content.getSystemService
 
+const val CHANNEL_ONE: String  = "channel1"
+const val CHANNEL_TWO: String = "channel2"
+
 class Notifications : Application() {
     /* Assigning ids to different notification channels */
-    private val CHANNEL_ONE: String  = "channel1"
-    private val CHANNEL_TWO: String = "channel2"
     override fun onCreate() {
         super.onCreate()
         createNotificationChannels()

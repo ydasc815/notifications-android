@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <EditText
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/title"
-        android:textSize="20sp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="@string/message"
-        android:textSize="20sp"
-        android:layout_margin="8dp"/>
+        <EditText
+            android:id="@+id/text_one"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/title"
+            android:textSize="20sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="#00B8FF"
-        android:text="@string/send_to_channel_1"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/text_two"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/message"
+            android:textSize="20sp"
+            android:layout_margin="8dp"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#00B8FF"
-        android:text="@string/send_to_channel_2"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textSize="20sp"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/channel_one_btn"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="#00B8FF"
+            android:text="@string/send_to_channel_1"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
 
-</LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/channel_two_btn"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00B8FF"
+            android:text="@string/send_to_channel_2"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+</layout>
