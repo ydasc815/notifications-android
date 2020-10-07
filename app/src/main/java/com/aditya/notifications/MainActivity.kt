@@ -3,6 +3,8 @@ package com.aditya.notifications
 import android.app.Notification
 import android.app.PendingIntent
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,11 +31,19 @@ class MainActivity : AppCompatActivity() {
         broadcastIntent.putExtra("toastMessage", binding.textTwo.text.toString())
         val actionIntent: PendingIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent,
             PendingIntent.FLAG_UPDATE_CURRENT)
+
+        val largeIcon: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.notif_icon)
+
         val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ONE)
             .setSmallIcon(R.drawable.ic_launcher_background)
             .setContentTitle(binding.textOne.text.toString())
             .setContentText(binding.textTwo.text.toString())
             .setColor(Color.BLUE)
+            .setLargeIcon(largeIcon)
+            .setStyle(NotificationCompat.BigTextStyle()
+                .bigText(getString(R.string.dummy_text))
+                .setBigContentTitle("Big Content Title")
+                .setSummaryText("Summary Text"))
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setContentIntent(contentIntent)
@@ -49,6 +59,15 @@ class MainActivity : AppCompatActivity() {
             .setSmallIcon(R.drawable.notif_icon)
             .setContentTitle(binding.textOne.text.toString())
             .setContentText(binding.textTwo.text.toString())
+            .setStyle(NotificationCompat.InboxStyle()
+                .addLine("This is a line")
+                .addLine("This is a line")
+                .addLine("This is a line")
+                .addLine("This is a line")
+                .addLine("This is a line")
+                .addLine("This is a line")
+                .setBigContentTitle("Big Content Title")
+                .setSummaryText("Summary Text"))
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build()
 

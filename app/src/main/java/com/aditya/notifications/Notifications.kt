@@ -4,7 +4,6 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
-import androidx.core.content.getSystemService
 
 const val CHANNEL_ONE: String  = "channel1"
 const val CHANNEL_TWO: String = "channel2"
