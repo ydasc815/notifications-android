@@ -32,18 +32,16 @@ class MainActivity : AppCompatActivity() {
         val actionIntent: PendingIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent,
             PendingIntent.FLAG_UPDATE_CURRENT)
 
-        val largeIcon: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.notif_icon)
+        val extraLargeIcon: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.notif_icon)
 
         val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ONE)
             .setSmallIcon(R.drawable.ic_launcher_background)
             .setContentTitle(binding.textOne.text.toString())
             .setContentText(binding.textTwo.text.toString())
-            .setColor(Color.BLUE)
-            .setLargeIcon(largeIcon)
-            .setStyle(NotificationCompat.BigTextStyle()
-                .bigText(getString(R.string.dummy_text))
-                .setBigContentTitle("Big Content Title")
-                .setSummaryText("Summary Text"))
+            .setLargeIcon(extraLargeIcon)
+            .setStyle(NotificationCompat.BigPictureStyle()
+                .bigPicture(extraLargeIcon)
+                .bigLargeIcon(null))
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setContentIntent(contentIntent)
