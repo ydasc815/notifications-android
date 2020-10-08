@@ -53,19 +53,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendOnChannelTwo() {
+        val extraLargeIcon: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.notif_icon)
         val notification: Notification = NotificationCompat.Builder(this, CHANNEL_TWO)
             .setSmallIcon(R.drawable.notif_icon)
             .setContentTitle(binding.textOne.text.toString())
             .setContentText(binding.textTwo.text.toString())
-            .setStyle(NotificationCompat.InboxStyle()
-                .addLine("This is a line")
-                .addLine("This is a line")
-                .addLine("This is a line")
-                .addLine("This is a line")
-                .addLine("This is a line")
-                .addLine("This is a line")
-                .setBigContentTitle("Big Content Title")
-                .setSummaryText("Summary Text"))
+            .setLargeIcon(extraLargeIcon)
+            .addAction(R.drawable.notif_icon, "Action 1", null)
+            .addAction(R.drawable.notif_icon, "Action 2", null)
+            .addAction(R.drawable.notif_icon, "Action 3", null)
+            .setStyle(androidx.media.app.NotificationCompat.MediaStyle()
+                .setShowActionsInCompactView(0, 1, 2))
+            .setSubText("Sub Text")
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build()
 
