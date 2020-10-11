@@ -69,4 +69,8 @@ class MainActivity : AppCompatActivity() {
 
         notificationManager.notify(1, notification)
     }
+
+    /*
+    TODO => Complete WorkManager & AlarmManager here. For CP Tracker App, we need AlarmManager due to fixed time notification scheduling
+    */
 }
