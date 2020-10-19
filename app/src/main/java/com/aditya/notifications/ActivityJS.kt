@@ -12,9 +12,9 @@ class ActivityJS : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_j_s)
     }
     private fun scheduleJob() {
-
+        TODO("Implement Schedule Job Method here")
     }
     private fun cancelJob() {
-
+        TODO("Implement Cancel Job Method here")
     }
 }
